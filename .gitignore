@@ -1,28 +1,62 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+/*
+	Ad-Soyad : Tutku GÜNDÜZLÜ
+	No : 2014123020
+	--Checksum Hesabı--
+*/
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <cstring>
 
-# Precompiled Headers
-*.gch
-*.pch
+using namespace std;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+class checksum
+{
+	public :
+		int che=0;
+		void checksumHesabi()
+		{
+			char dizi[10];
+			int i, toplam=0 , temp=0, tum=65535, x=pow(16,4);
+		
+			cout << "Lutfen isminizi(veriyi) giriniz : "<<endl;
+			cin >> dizi;
+		
+			for(i=0 ; i<strlen(dizi) ; i+=2)	
+				{
+					cout<<setbase(16)<<" "<<(int)dizi[i]<<" "<<setbase(16)<<(int)dizi[i+1]<<endl;	// 16 lıga cevirme	
+					toplam += dizi[i]*256 + dizi[i+1];	// Sayıları birleştirip toplama	
+				}
+			cout << " "<<che << endl<<"+"<<endl<<"------"<<endl;
+			
+			
+			toplam += che;
+			temp = toplam;
+		
+			toplam = toplam % x;	// Eldesiz 4 bit alınıyor.
+		
+			cout<<" "<<toplam <<endl;	
+		
+			toplam += int(temp / x);	// Elde belirleniyor ve toplama ekleniyor. 
+		
+			cout<<" Toplam : "<<toplam<<endl;
+			cout<<"Tumleyen aliniyor : "<<setbase(16)<<tum<<" - "<< toplam<<endl;	
+		
+			che = tum-toplam;
+			cout<<" Checksum : "<<che<<endl;		// Tümleyen alma (checksum heabı)
+		}
+} nesne;
 
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+	
+	int main() 
+		{
+     	  nesne.checksumHesabi();
+       	  nesne.checksumHesabi();
+	  	
+         if(nesne.che==0)
+        	 cout<<"VERI BOZULMADAN ALINDI"<<endl;
+         else
+        	 cout<<"VERI BOZULDU"<<endl;
+         
+	return 0;
+}
