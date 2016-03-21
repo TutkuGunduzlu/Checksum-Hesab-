@@ -1,0 +1,38 @@
+/*
+ 	Tutku GÜNDÜZLÜ
+    Palindorme kelimeyi bulan java kodu
+ 
+ 
+*/
+package ornekler;
+
+import java.util.Scanner;
+
+public class palindorme
+{
+
+	public static void main(String[] args) 
+	{  
+		String kelime="";
+		int sayac=0;
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("kelime giriniz:");
+		 kelime=scan.next();
+		 
+		int boy = kelime.length();
+		
+		    for(int i=0 ; i<boy/2 ; i++)    //veya i<boy
+		    {
+			  if(kelime.charAt(i)==kelime.charAt(boy-1-i))
+				  sayac++;
+			  else 
+				  break;
+		    }
+		    if(sayac==boy/2)    //veya sayac>=boy/2
+		    	System.out.println(kelime.toUpperCase()+"  palindorme kelimedir");
+		    else
+		    	System.out.println(kelime.toLowerCase()+"  palindorme değildir");
+	}
+
+}
