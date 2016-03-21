@@ -1,0 +1,36 @@
+/*
+	Tutku GÜNDÜZLÜ
+	Yalnızca harf girdisi alan java kodu
+*/
+package ornekler;
+
+import java.util.Scanner;
+
+public class hataYakalama {
+
+	public static void main(String[] args) 
+	{
+		Scanner scan = new Scanner(System.in);
+		 char[] dizi = new char[5];
+		 
+		 try
+		 {
+			 for(int i=0 ; i<5 ; i++) 
+			 {
+				  System.out.println("Bir harf giriniz : ");
+			      char karakter = scan.next().charAt(0);
+			    
+			    if( (karakter>=66 && karakter<=90) || (karakter>=97 && karakter<=122) )
+			      dizi[i]=karakter;
+			    
+			    else  throw new Exception();  
+			 }
+		 }
+		catch(Exception e)
+		 {
+			System.out.println("Hata ! Yalnızca harf girmelisiniz.");
+		 }
+		
+	}
+
+}
