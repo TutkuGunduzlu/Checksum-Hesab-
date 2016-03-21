@@ -1,0 +1,31 @@
+/*
+	Tutku GÜNDÜZLÜ
+	Sayıyı tersten yazdıran java kodu
+*/
+
+package ornekler;
+
+import java.util.Scanner;
+
+public class basamak 
+{
+
+	public static void main(String[] args) 
+	{
+		int kalan = 0;
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Bir sayı giriniz : ");
+		int sayi = scan.nextInt();
+		
+		System.out.println("Girdiğiniz sayının tersten yazılışı : ");
+		
+      while(sayi != 0)
+      {
+    	  kalan = sayi % 10;
+    	  sayi /= 10;
+    	  System.out.print(kalan);
+      }
+	}
+
+}
