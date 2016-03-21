@@ -1,0 +1,64 @@
+/*
+	Tutku GÜNDÜZLÜ
+	Dosyaya veri yazdıran ve okuyon java kodu
+*/
+
+package girisCikiş;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class ogrenci 
+{
+
+	public static void main(String[] args) throws IOException
+	{
+      File f1 = new File("C:\\Users\\esc\\Desktop\\ogrenci.txt"); 
+      File f2 = new File("C:\\Users\\esc\\Desktop\\not.txt"); 
+      
+      FileWriter fw1 = new FileWriter(f1);
+      FileWriter fw2 = new FileWriter(f2);
+      
+      String ad,dersAdi,adres;
+      int not;
+      long tel,numara;
+      
+      Scanner scan = new Scanner(System.in);
+      
+      System.out.println("Öğrenci adını ve soyadını giriniz : ");
+      ad = scan.nextLine();
+      fw1.write("\nÖğrenci adı ve soyadı : "+ad);
+      
+      System.out.println("Öğrenci numarasını giriniz : ");
+      numara = scan.nextInt();
+      fw1.write("\nÖğrenci numarası : "+numara);
+      
+      System.out.println("Öğrenci telefon numarasını giriniz : ");
+      tel = scan.nextLong();
+      fw1.write("\nÖğrenci telefon numarası : "+tel);
+      
+      System.out.println("Öğrenci adresini giriniz : ");
+      adres = scan.next();
+      fw1.write("\nÖğrenci adresi : "+adres);
+      
+      //ikinci dosyaya yazdırılıyor...
+      
+      fw2.write("\nÖğrenci adı ve soyadı : "+ad);
+      
+      fw2.write("\nÖğrenci numarası : "+numara);
+      
+      System.out.println("Öğrenci notunu giriniz : ");
+      not = scan.nextInt();
+      fw2.write("\nÖğrenci notu : "+not);
+      
+      System.out.println("Ders adını giriniz giriniz : ");
+      dersAdi = scan.next();
+      fw2.write("\nDers adı : "+dersAdi);
+      
+      fw1.close();
+      fw2.close();
+      
+
+	}
+
+}
