@@ -1,0 +1,53 @@
+/*
+		Ad soyad: Tutku Gündüzlü
+		Sinüsü hesaplayan program...
+*/
+
+#include<iostream>
+#include<cmath>
+#include<conio.h>
+
+using namespace std;
+
+//sin(x)=x/1-x^3/3!+x^5/5!-x^7/7!.....
+	   
+double sinus(double radyan);
+int faktor(int sayi);
+	   
+	int main()
+	{
+		double pi = 3.141592,radyan,aci;
+		cout << "Sinus u hesaplanacak aciyi girin : " << endl;
+		cin >> aci;
+		
+		radyan= aci*pi/180.0;
+		
+		cout << "radyan degeri: " << radyan << endl;
+		cout << "sinus degeri: " << sinus(radyan);
+		
+		
+		
+	    return 0;
+	}
+	
+	 double sinus(double radyan)
+	    {
+	    	int isaret=1,i,m=1;
+	    	double sonuc=0.0;
+	    	for(i=1 ; i<9; i++)
+	    	{
+	    		sonuc += isaret*pow(radyan,m)/faktor(m);
+	    		isaret *= -1;
+	    		m+=2;
+			}
+			return sonuc;
+		}
+		int faktor(int sayi)
+		{
+			int f=1,j;
+				for(j=1 ; j<=sayi ; j++)
+				{
+					f *= j;
+				}
+				return f;
+		}
