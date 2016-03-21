@@ -1,0 +1,43 @@
+/*
+		Ad soyad: Tutku Gündüzlü
+		iomanip kütüphanesi fonksiyonlarını örnekleyen program...
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <conio.h>
+
+using namespace std;
+
+class MyClass
+{
+	public:
+			int sayi1; //= 125;
+			double sayi2; //= 67.548721404;
+
+			void fonk(int sayi1, double sayi2)
+			{
+				cout<<setw(9)<<sayi1<<endl;  // Sayının karakter genişliğini belirler.
+				cout<<setfill('*')<<setw(9)<<sayi1<<endl;  // Bırakılan boşluğu belirtilen karakterle doldurur.
+				cout<<setprecision(4)<<sayi2<<endl;  // Virgülden sonra kaç basamagın gösterileceğini belirtir.
+				cout<<setbase(16)<<sayi1<<endl;  // Sayıyı 16'lık tabana çevirir.
+				cout<<setbase(8)<<sayi1<<endl;  //  Sayıyı 8'lik tabana çevirir.
+			}
+};
+
+	int main() 
+	{
+		MyClass nesne;
+		
+		cout << "integer sayi girin: ";
+
+		cin >> nesne.sayi1;
+		
+		cout << " double sayi girin: ";
+		
+		cin >> nesne.sayi2;
+
+		nesne.fonk(nesne.sayi1, nesne.sayi2);
+
+		return 0;
+	}
