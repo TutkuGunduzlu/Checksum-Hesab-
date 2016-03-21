@@ -1,0 +1,32 @@
+/*
+	Tutku Gündüzlü
+	Basit thread örneği
+*/
+package ornekler;
+
+public class threadOrnek {
+
+	public static void main(String[] args) 
+	{
+		Thread s1 = new sinif("Thread 1");
+		Thread s2 = new sinif("Thread 2");
+		Thread s3 = new sinif("Thread 3");
+		Thread s4 = new sinif("Thread 4");
+		
+	}
+
+}
+class sinif extends Thread
+{
+	String ad;
+  public sinif(String ad)
+  {
+	  super(ad);
+	  this.ad=ad;
+	  start();
+  }
+  public void run()
+  {
+	  System.out.println(Thread.currentThread().getName());
+  }
+}
