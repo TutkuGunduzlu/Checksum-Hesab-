@@ -1,0 +1,56 @@
+/*
+	Tutku GÜNDÜZLÜ
+	Thread konusu örneği
+*/
+
+package Thread;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class asciiKod extends Thread
+{	
+	 
+	 int[] dizi = new int[3];
+	 int i;
+	
+	public static void main(String[] args)
+	{
+		  Thread t1 = new asciiKod("1. Thread");
+	      Thread t2 = new asciiKod("2. Thread");
+	      Thread t3 = new asciiKod("3. Thread");
+	}
+	
+	public asciiKod(String ad)
+	{
+		super(ad);
+		start();
+	}
+	
+	
+	public  void run()
+	{
+		int cevir ;
+		char karakter;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		synchronized(this) 
+		{
+			
+			
+			System.out.println("Bir karakter giriniz : ");
+		    karakter = scan.next().charAt(0);
+		    cevir = karakter;
+		    
+		    	dizi[i] = cevir;
+		    	i++;
+		
+		
+		System.out.println(cevir+"  "+Thread.currentThread().getName());
+		}
+		Arrays.sort(dizi);
+	      for(int i=0 ; i<3 ; i++)
+	      System.out.println(dizi[i]);
+	}
+}
