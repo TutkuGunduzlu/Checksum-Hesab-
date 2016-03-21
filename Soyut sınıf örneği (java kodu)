@@ -1,0 +1,72 @@
+/*
+ 	Tutku GÜNDÜZLÜ
+ 	Soyut sınıf java örneği
+ */
+package abstractSinif;
+
+public class abstractSinif
+{
+	public static void main(String[] args) 
+	{
+		basket b =new basket("basketbol",1000,1);
+		voley v =new voley("voleybol",2000,2);
+		futbol f =new futbol("futbol",3000,3);
+	}
+}
+
+abstract class sinif1
+{
+	int maas,sira;
+	String kulup;
+	
+	abstract public void yazdir(); //soyut metod
+	
+	sinif1 (String kulup,int maas,int sira)
+	{
+		this.kulup=kulup;
+		this.maas=maas;
+		this.sira=sira;
+		
+		yazdir();
+	}
+}
+class basket extends sinif1
+{
+	basket(String kulup, int maas, int sira)
+	{
+		super(kulup, maas, sira);
+	}
+
+	public void yazdir()
+	{
+		System.out.println("Kulüp: "+kulup+"   Maaş: "+maas+"   Sıralama: "+sira);	
+	}
+}
+
+
+class voley extends sinif1
+{
+	voley(String kulup, int maas, int sira) 
+	{
+		super(kulup, maas, sira);
+	}
+
+	public void yazdir()
+	{
+		System.out.println("Kulüp: "+kulup+"   Maaş: "+maas+"   Sıralama: "+sira);
+	}
+}
+
+
+class futbol extends sinif1
+{
+	futbol(String kulup, int maas, int sira) 
+	{
+		super(kulup,maas, sira);
+	}
+
+	public void yazdir()
+	{
+		System.out.println("Kulüp: "+kulup+"   Maaş: "+maas+"   Sıralama: "+sira);	
+	}
+}
