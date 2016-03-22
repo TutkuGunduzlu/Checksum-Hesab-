@@ -1,0 +1,34 @@
+/*
+	Tutku Gündüzlü
+	Asal sayi hesaplayan C kodu
+*/
+#include <stdio.h>
+#include <conio.h>
+
+int main()
+{   
+    int i,sayi,a=0;
+    
+    printf("Bir sayi giriniz:");
+    scanf("%d",&sayi);
+    
+     if(sayi<=0)
+	 {
+    	printf("Pozitif bir sayi girmelisiniz !\n");
+          return 0;
+     }
+                          
+    for(i=2 ; i<sayi ; i++)
+	{
+        if(sayi % i==0)
+            a++;
+    }
+     if(a==0 && sayi!=1)
+        printf("%d sayisi asaldir",sayi);
+     else 
+        printf("%d sayisi asal degildir",sayi);
+                          
+  
+  getch();	
+  return 0;
+}
