@@ -1,0 +1,24 @@
+/*
+	Tutku Gündüzlü
+	Dizi elemanlarını ters çeviren C kodu
+*/
+#include <stdio.h>
+#include <conio.h>
+
+int main()
+{
+    int a[10]={1,2,3,4,5,6,7,8,9,10};
+    int i,tut;
+    
+    for(i=0;i<5;i++) 
+	{
+        tut=a[i];
+        a[i]=a[9-i];
+        a[9-i]=tut;
+    }
+         for(i=0;i<10;i++)
+            printf("a[%d]=%d\n",i,a[i]);
+  
+  getch();	
+  return 0;
+}
