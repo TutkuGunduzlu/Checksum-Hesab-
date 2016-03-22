@@ -1,0 +1,44 @@
+/*
+	Tutku Gündüzlü
+	'#' karakteri ile üçgen çizdirme
+*/
+#include<stdio.h>
+#include<conio.h>
+
+int main ()
+{
+    int diyezsayisi,i,j,a;
+    
+    printf("Genisleyen ucgen cizimi icin 1 , daralan ucgen cizimi icin 0 giriniz:\n\n");
+     scanf("%d",&a);
+     printf("# sayisini giriniz:\n\n");
+     scanf("%d",&diyezsayisi);
+     
+     if(a==1)
+	 {
+     	for(i=1;i<=diyezsayisi;i++) 
+		 {
+         	for(j=1;j<=i;j++) 
+			 {
+            	 printf("#");
+             }
+                 printf("\n");
+         }
+     }
+     else if(a==0)
+	 {
+   		for(i=diyezsayisi;i>0;i--) 
+		{
+      		for(j=i;j>0;j--) 
+			{
+           		printf("#");
+            }
+                printf("\n");
+        }
+     } 
+     else 
+		printf("0 veya 1 giriniz!");
+    
+    getch();
+    return 0;
+}
