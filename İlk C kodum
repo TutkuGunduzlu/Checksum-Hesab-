@@ -1,0 +1,18 @@
+/*
+	Tutku Gündüzlü
+	İlk C kodum
+*/
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+  int a,b;
+  
+  printf("iki sayi giriniz:");
+  scanf("%d%d",&a,&b);
+  printf("bu iki sayinin toplami: %d",a+b);
+  
+  getch();	
+  return 0;
+}
