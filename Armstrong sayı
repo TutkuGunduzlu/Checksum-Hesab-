@@ -1,0 +1,27 @@
+/*
+	Tutku Gündüzlü
+	Armstrong sayı bulan c kodu
+*/
+#include <stdio.h>
+#include <conio.h>
+
+int main()
+{
+    int sayi,kalan,i;
+    int a[3];
+    
+  printf("3 basamakli sayiyi giriniz:");
+  scanf("%d",&sayi);
+  
+  a[2]=sayi/100;
+  kalan=sayi%100;
+  a[1]=kalan/10;
+  kalan=kalan%10;
+  a[0]=kalan;
+                   	if(sayi == pow(a[0],3) + pow(a[1],3) + pow(a[2],3))
+                   		printf("%d sayisi bir armstrong sayidir!",sayi);
+                   	else
+                   		printf("%d sayisi bir armstrong sayi degildir!",sayi);
+  getch();	
+  return 0;
+}
