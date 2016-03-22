@@ -1,0 +1,23 @@
+/*
+	Tutku Gündüzlü
+	Satranç tahtasındaki buğday sayısı :)
+*/
+#include <stdio.h>
+#include <conio.h>
+
+int main()
+{
+    double bugdaysayisi=1,toplam=0;
+    int i;
+    
+    for(i=1;i<65;i++) 
+	{
+		printf("%d. karedeki bugday sayisi:%20.0f\n",i,bugdaysayisi);
+        toplam += bugdaysayisi;
+        bugdaysayisi *= 2;
+    }
+        printf("Toplam bugday sayisi:%20.0f\n",toplam);
+  
+  getch();	
+  return 0;
+}
