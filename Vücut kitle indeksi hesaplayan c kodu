@@ -1,0 +1,32 @@
+/*
+	Tutku Gündüzlü
+	Vücut kitle indeksi hesaplayan c kodu
+*/
+#include <stdio.h>
+#include <conio.h>
+
+int main()
+{ 
+    double vki,boy,kilo;
+    
+   	 printf("boy:\n");
+   	 scanf("%lf",&boy);
+   	 printf("kilo:\n");
+   	 scanf("%lf",&kilo);
+    
+    vki=kilo/(boy*boy);
+    
+    if(vki<20)
+    	printf("zayif");
+    else if(vki>=20&&vki<25)
+    	printf("normal");
+    else if(vki>=25&&vki<30)
+    	printf("kilolu");
+    else if(vki>=30&&vki<40)
+    	printf("sisman");
+    else
+   	 printf("obez");
+  
+  getch();	
+  return 0;
+}
